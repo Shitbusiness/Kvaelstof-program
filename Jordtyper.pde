@@ -9,19 +9,27 @@
 //Kalkrig jord
 
 
-class Jordtype {
+class Jordtyper {
   //Attributter
-
+  int id;
   String navn;
-  String type;
-  String vaerdi;
+  float vaerdi;
 
   //Konstruktør
-  Jordtype(String n, String t, String v) {
+  Jordtyper(int i, String n, float v) {
     navn = n;
-    type = t;
+    id = i;
     vaerdi = v;
 
     //Metoder
+  }
+  String getNavn(){
+  return this.navn;
+  }
+  int getId(){
+  return this.id;
+  }
+  float getVaerdi(){ 
+  return this.vaerdi;
   }
 }
