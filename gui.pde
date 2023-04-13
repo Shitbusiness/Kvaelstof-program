@@ -28,6 +28,9 @@ public void dropList1_click3(GDropList source, GEvent event) { //_CODE_:Afgroed:
 
 public void button1_click1(GButton source, GEvent event) { //_CODE_:Beregn:373559:
   println("Beregn - GButton >> GEvent." + event + " @ " + millis());
+  
+  //beregn_!!!!!!!!!!!!!!!
+  godningResultat.setText("fisss");
 } //_CODE_:Beregn:373559:
 
 
@@ -39,18 +42,27 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  Goedning = new GDropList(this, 5, 5, 90, 60, 2, 10);
-  Goedning.setItems(loadStrings("list_820935"), 0);
+  Goedning = new GDropList(this, 6, 162, 90, 60, 2, 10);
+  //Der er godning med og uden e (goedning og godning), med e er drop down listen
+  //Goedning.setItems(loadStrings("list_820935"), 0);
+  Goedning.setItems(godningsliste(), 0);
   Goedning.addEventHandler(this, "dropList1_click1");
-  Jordtype = new GDropList(this, 103, 5, 90, 180, 8, 10);
-  Jordtype.setItems(loadStrings("list_594344"), 0);
+  Jordtype = new GDropList(this, 5, 5, 90, 180, 8, 10);
+  //Jordtype.setItems(loadStrings("list_594344"), 0);
+  Jordtype.setItems(jordListe(), 0);
   Jordtype.addEventHandler(this, "dropList1_click2");
-  Afgroed = new GDropList(this, 203, 5, 90, 140, 6, 10);
-  Afgroed.setItems(loadStrings("list_675680"), 0);
+  Afgroed = new GDropList(this, 105, 5, 90, 140, 6, 10);
+  //Der er afgrod med og uden e (afgroed og afgrod), med e er drop down listen 
+  //Afgroed.setItems(loadStrings("list_675680"), 0);
+  Afgroed.setItems(afgrodsliste(), 0);
   Afgroed.addEventHandler(this, "dropList1_click3");
   Beregn = new GButton(this, 6, 100, 80, 30);
   Beregn.setText("Beregn");
   Beregn.addEventHandler(this, "button1_click1");
+  godningResultat = new GLabel(this, 160, 140, 80, 20);
+  godningResultat.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  godningResultat.setText("My label");
+  godningResultat.setOpaque(false);
 }
 
 // Variable declarations 
@@ -59,3 +71,4 @@ GDropList Goedning;
 GDropList Jordtype; 
 GDropList Afgroed; 
 GButton Beregn; 
+GLabel godningResultat; 

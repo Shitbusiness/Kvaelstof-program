@@ -24,12 +24,12 @@ public void setup() {
   jordtyper [5] = new Jordtyper (6, "Svær lerjord", 19);
   jordtyper [6] = new Jordtyper (7, "Humusjord", 12);
   jordtyper [7] = new Jordtyper (8, "Kalkrig jord", 11);
-  afgrode [0] = new Afgrode (1,"raps",2);
-  afgrode [1] = new Afgrode (2,"Hvede",2);
-  afgrode [2] = new Afgrode (3,"byg",2);
-  afgrode [3] = new Afgrode (4,"foder majs",2);
-  afgrode [4] = new Afgrode (5,"sojabønner",2);
-  afgrode [5] = new Afgrode (6,"gras",2);
+  afgrode [0] = new Afgrode (1, "raps", 2);
+  afgrode [1] = new Afgrode (2, "Hvede", 2);
+  afgrode [2] = new Afgrode (3, "byg", 2);
+  afgrode [3] = new Afgrode (4, "foder majs", 2);
+  afgrode [4] = new Afgrode (5, "sojabønner", 2);
+  afgrode [5] = new Afgrode (6, "gras", 2);
   createGUI();
   customGUI();
   // Place your setup code here
@@ -37,11 +37,37 @@ public void setup() {
 
 public void draw() {
   background(230);
-  println(gras.getNavn());
-  println(gras.beregn(100));
+  println(afgrode[5].getNavn());
+  println(afgrode[5].beregn(100));
 }
 
 // Use this method to add additional statements
 // to customise the GUI controls
 public void customGUI() {
+}
+
+String[] jordListe() {
+  String[] result = new String[jordtyper.length];
+  for (int i =0; i < jordtyper.length; i++)
+  {
+    result[i]=jordtyper[i].getNavn();
+  }
+  return result;
+}
+
+String[] afgrodsliste() {
+  String[] result = new String[afgrode.length];
+  for (int i =0; i < afgrode.length; i++)
+  {
+    result[i]=afgrode[i].getNavn();
+  }
+  return result;
+}
+String[] godningsliste() {
+  String[] result = new String[godning.length];
+  for (int i =0; i < godning.length; i++)
+  {
+    result[i]=godning[i].getNavn();
+  }
+  return result;
 }
