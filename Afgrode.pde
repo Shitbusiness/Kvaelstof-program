@@ -10,23 +10,28 @@
 class Afgrode {
   //Attributter
 
+  int id;
   String navn;
   float mengde;
 
   //Konstruktør
-  Afgrode(String n, float m) {
+  Afgrode(int i, String n, float m) {
     navn = n;
     mengde = m;
+    id = i;
   }
     //Metoder
+    int getId(){
+    return this.id;
+    }
     String getNavn(){
-    return navn;
+    return this.navn;
     }
     Float getMengde(){
-    return mengde;
+    return this.mengde;
     }
     float beregn (float ha){
-      return mengde*ha;
+      return this.mengde*ha;
       
     }
 }

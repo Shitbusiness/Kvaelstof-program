@@ -4,17 +4,25 @@
 
 class Godning {
   //Attributter
-
+  int id;
   String navn;
-  String type;
-  String vaerdi;
+  float vaerdi;
 
   //Konstruktør
-  Godning(String n, String t, String v) {
+  Godning(int i, String n, float v) {
+    id = i;
     navn = n;
-    type = t;
     vaerdi = v;
 
     //Metoder
   }
+  String getNavn(){
+  return this.navn;
+  }
+  int getId (){
+  return this.id;
+  }
+  float getVaerdi(){
+  return this.vaerdi;
+  } 
 }
